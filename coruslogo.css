@@ -1,0 +1,93 @@
+/* Контейнер карусели */
+.carousel {
+    width: 10%; /* Ширина карусели */
+    height: 100%; /* Высота карусели */
+    overflow: hidden; /* Скрываем элементы за пределами */
+    position: relative;
+	margin-right: 100px;
+}
+
+/* Дорожка с логотипами */
+.carousel-track {
+    display: flex;
+    flex-direction: column; /* Логотипы располагаются вертикально */
+    animation: scroll-logos 10s linear infinite; /* Анимация */
+}
+
+/* Логотипы */
+.carousel-track img {
+    width: 100%; /* Подгоняем под ширину контейнера */
+    margin: 10px 0; /* Отступ между логотипами */
+}
+
+/* Анимация бесконечного движения */
+@keyframes scroll-logos {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-50%); /* Сдвиг на половину высоты */
+    }
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Контейнер карусели */
+.carouseltext {
+    width: 20%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent; /* Прозрачный фон */
+}
+
+/* Дорожка со словами */
+.carouseltext-track {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    animation: scroll-words-down 12s linear infinite; /* Анимация движения */
+}
+
+/* Стили для слов */
+.word {
+    font-family: 'Fira Code', monospace; /* Программистский шрифт */
+    font-size: 1.5rem; /* Размер текста */
+    color: #000; /* Черный цвет текста */
+    margin: 10px 0;
+    transition: font-size 0.2s ease, color 0.2s ease; /* Плавные изменения */
+}
+
+/* Анимация движения сверху вниз */
+@keyframes scroll-words-down {
+    0% {
+        transform: translateY(0); /* Начинаем выше контейнера */
+    }
+    100% {
+        transform: translateY(30%); /* Движемся вниз */
+    }
+}
+
+/* Дополнительный hover-эффект */
+.word:hover {
+    font-size: 2rem;
+    color: var(--hover-color, #ffcc00);
+}
+
+/* Скрыть элементы на экранах менее 1400px */
+@media (max-width: 1399px) {
+    .carousel, /* Класс карусели логотипов */
+    .carouseltext {    /* Класс текстового блока */
+        display: none;
+    }
+}

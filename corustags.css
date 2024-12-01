@@ -1,0 +1,62 @@
+/* Обнуление стилей */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #1e1e1e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+}
+
+/* Контейнер карусели */
+.carousel {
+    width: 200px;
+    height: 150px;
+    overflow: hidden;
+    position: relative;
+    border: 2px solid #333;
+    border-radius: 10px;
+    background: #2d2d2d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carouseltext-track {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: scroll-words 1s linear infinite; /* Бесконечная анимация */
+}
+
+/* Стили для слов */
+.word {
+    font-family: 'Fira Code', monospace; /* Программистский шрифт */
+    font-size: 1.5rem; /* Базовый размер текста */
+    color: var(--text-color, #33ff99); /* Цвет текста (по умолчанию зеленый) */
+    margin: 10px 0;
+    transition: font-size 0.2s ease, color 0.2s ease; /* Плавные изменения */
+}
+
+/* Анимация движения */
+@keyframes scroll-words {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+/* Дополнительный hover-эффект */
+.word:hover {
+    font-size: 2rem; /* Увеличиваем размер при наведении */
+    color: var(--hover-color, #ffcc00); /* Меняем цвет при наведении */
+}
