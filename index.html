@@ -1,38 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-	    <script>
-        // JavaScript для прелоадера
-        document.addEventListener("DOMContentLoaded", function () {
-            // Создаем элемент прелоадера
-            const preloader = document.createElement("div");
-            preloader.id = "preloader";
-            preloader.style.position = "fixed";
-            preloader.style.top = "0";
-            preloader.style.left = "0";
-            preloader.style.width = "100%";
-            preloader.style.height = "100%";
-            preloader.style.backgroundColor = "#ffffff";
-            preloader.style.display = "flex";
-            preloader.style.alignItems = "center";
-            preloader.style.justifyContent = "center";
-            preloader.style.zIndex = "9999";
-
-            // Добавляем "анимацию" в виде текста или круга
-            const loaderText = document.createElement("div");
-            loaderText.textContent = "Загрузка...";
-            loaderText.style.fontSize = "20px";
-            loaderText.style.color = "#3498db";
-            preloader.appendChild(loaderText);
-
-            // Добавляем прелоадер в DOM
-            document.body.appendChild(preloader);
-
-            // Убираем прелоадер через 1 секунду
-            setTimeout(() => {
-                preloader.style.display = "none"; // Скрываем прелоадер
-            }, 1000); // 1 секунда = 1000 мс
-        });
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Одностраничный сайт</title>
